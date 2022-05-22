@@ -10,6 +10,7 @@ import EditProfilePopup from '../EditProfilePopup/EditProfilePopup';
 import EditAvatarPopup from '../EditAvatarPopup/EditAvatarPopup';
 import AddPlacePopup from '../AddPlacePopup/AddPlacePopup';
 import ConfirmDeletePopup from '../ConfirmDeletePopup/ConfirmDeletePopup';
+import { auth } from '../utils/Auth';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
