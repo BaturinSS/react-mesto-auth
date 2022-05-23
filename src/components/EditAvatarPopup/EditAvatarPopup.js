@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import PopupWithForm from "../popupWithForm/PopupWithForm";
 import FormValidator from "../FormValidator/FormValidator";
 import { auth } from "../utils/Auth";
 
