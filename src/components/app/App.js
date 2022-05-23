@@ -11,6 +11,8 @@ import EditAvatarPopup from '../EditAvatarPopup/EditAvatarPopup';
 import AddPlacePopup from '../AddPlacePopup/AddPlacePopup';
 import ConfirmDeletePopup from '../ConfirmDeletePopup/ConfirmDeletePopup';
 import { auth } from '../utils/Auth';
+import InformMessagePopup from '../InformMessagePopup/InformMessagePopup';
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -258,6 +260,8 @@ function App() {
       <ImagePopup
         card={selectedCard}
       />
+
+      <InformMessagePopup />
 
     </TranslationContext.Provider>
   );
