@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import './Main.css';
-import Card from "../card/Card";
+import Card from "../Card/Card";
 import { TranslationContext } from '../../contexts/CurrentUserContext';
 
 function Main({

@@ -1,5 +1,5 @@
 import React from "react";
-import PopupWithForm from "../popupWithForm/PopupWithForm";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import FormValidator from "../FormValidator/FormValidator";
 
 function ConfirmDeletePopup({

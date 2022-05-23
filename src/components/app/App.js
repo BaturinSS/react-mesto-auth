@@ -1,8 +1,8 @@
 import './App.css';
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
-import Main from '../main/Main';
-import ImagePopup from '../imagePopup/ImagePopup';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Main from '../Main/Main';
+import ImagePopup from '../ImagePopup/ImagePopup';
 import { useState, useEffect } from "react";
 import { api } from '../utils/Api';
 import { TranslationContext } from '../../contexts/CurrentUserContext';
