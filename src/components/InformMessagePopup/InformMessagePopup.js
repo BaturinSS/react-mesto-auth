@@ -7,7 +7,7 @@ import error from '../../images/informMessagePopup-img/error_message.svg'
 function InformMessagePopup({
   // isOpen,
 }) {
-  const isOpen = true;
+  const isOpen = false;
 
   return (
     <div className={`popup popup_type_inform-message ${isOpen && "popup_opened"}`}>
