@@ -218,17 +218,6 @@ function App() {
 
         <Route path="/">
 
-          <Authorization
-            title='Регистрация'
-            name='register'
-            buttonText='Зарегистрироваться'
-            isButtonDisabled={isButtonDisabled}
-          />
-
-        </Route>
-
-        {/* <Route path="/">
-
           <Main
             onEditProfile={handleEditProfileClick}
             onEditAvatar={handleEditAvatarClick}
@@ -239,7 +228,29 @@ function App() {
             cards={cards}
           />
 
-        </Route> */}
+        </Route>
+
+        <Route path="/sign-up">
+
+          <Authorization
+            title='Регистрация'
+            name='register'
+            buttonText={`${!isDownload ? 'Зарегистрироваться' : 'Регистрирую...'}`}
+            isButtonDisabled={isButtonDisabled}
+          />
+
+        </Route>
+
+        <Route path="/sign-in">
+
+          <Authorization
+            title='Вход'
+            name='login'
+            buttonText={`${!isDownload ? 'Войти' : 'Проверяю...'}`}
+            isButtonDisabled={isButtonDisabled}
+          />
+
+        </Route>
 
       </Switch>
 
