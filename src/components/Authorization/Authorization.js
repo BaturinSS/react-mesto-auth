@@ -50,7 +50,9 @@ function Authorization({
           name='email'
           onChange={handleEmailChange}
         />
-        <span className={`authorization__input-error ${name}Email-input-error ${!emailValidInput ? "popup__input_type_error" : ''}`}>{emailErrorMessage}</span>
+        <span className={`authorization__input-error ${name}Email-input-error ${!emailValidInput ? "popup__input_type_error" : ''}`}>
+          {emailErrorMessage}
+        </span>
         <input
           id={`${name}Password-input`}
           className={`authorization__input authorization__input_${name}-password ${!passwordValidInput ? "popup__input_type_error" : ''}`}
@@ -63,7 +65,9 @@ function Authorization({
           maxLength="12"
           onChange={handlePasswordChange}
         />
-        <span className={`authorization__input-error ${name}Password-input-error ${!passwordValidInput ? "popup__input_type_error" : ''}`}>{passwordErrorMessage}</span>
+        <span className={`authorization__input-error ${name}Password-input-error ${!passwordValidInput ? "popup__input_type_error" : ''}`}>
+          {passwordErrorMessage}
+        </span>
         <button
           className={`authorization__save-button`}
           type="submit"
@@ -72,7 +76,10 @@ function Authorization({
           {buttonText}
         </button>
       </form>
-      <p className="authorization__comment">Уже зарегистрированы?<a className="authorization__link-entry" href="#" target="_blank"> Войти</a></p>
+      <p className="authorization__comment">
+        Уже зарегистрированы?
+        <a className="authorization__link-entry" href="#" target="_blank"> Войти</a>
+      </p>
     </div>
   )
 }
