@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import ImagePopup from '../ImagePopup/ImagePopup';
 import { useState, useEffect } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { api } from '../utils/Api';
 import { TranslationContext } from '../../contexts/CurrentUserContext';
 import EditProfilePopup from '../EditProfilePopup/EditProfilePopup';
@@ -214,45 +214,41 @@ function App() {
 
       <Header />
 
-      <Switch>
+      <Route exact path="/">
 
-        <Route path="/">
+        <Main
+          onEditProfile={handleEditProfileClick}
+          onEditAvatar={handleEditAvatarClick}
+          onAddPlace={handleAddPlaceClick}
+          onCardDelete={updateDeleteCard}
+          onCardClick={handleCardClick}
+          onCardLike={handleCardLike}
+          cards={cards}
+        />
 
-          <Main
-            onEditProfile={handleEditProfileClick}
-            onEditAvatar={handleEditAvatarClick}
-            onAddPlace={handleAddPlaceClick}
-            onCardDelete={updateDeleteCard}
-            onCardClick={handleCardClick}
-            onCardLike={handleCardLike}
-            cards={cards}
-          />
+      </Route>
 
-        </Route>
+      <Route path="/sign-up">
 
-        <Route path="/sign-up">
+        <Authorization
+          title='Регистрация'
+          name='register'
+          buttonText={`${!isDownload ? 'Зарегистрироваться' : 'Регистрирую...'}`}
+          isButtonDisabled={isButtonDisabled}
+        />
 
-          <Authorization
-            title='Регистрация'
-            name='register'
-            buttonText={`${!isDownload ? 'Зарегистрироваться' : 'Регистрирую...'}`}
-            isButtonDisabled={isButtonDisabled}
-          />
+      </Route>
 
-        </Route>
+      <Route path="/sign-in">
 
-        <Route path="/sign-in">
+        <Authorization
+          title='Вход'
+          name='login'
+          buttonText={`${!isDownload ? 'Войти' : 'Проверяю...'}`}
+          isButtonDisabled={isButtonDisabled}
+        />
 
-          <Authorization
-            title='Вход'
-            name='login'
-            buttonText={`${!isDownload ? 'Войти' : 'Проверяю...'}`}
-            isButtonDisabled={isButtonDisabled}
-          />
-
-        </Route>
-
-      </Switch>
+      </Route>
 
       <Footer />
 

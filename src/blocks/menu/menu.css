@@ -1,0 +1,13 @@
+.menu {
+  display: none;
+  flex-direction: column;
+  border-bottom: 1px solid #545454;
+  margin: 0 0 27px;
+  padding: 0;
+}
+
+@media screen and (max-width: 450px) {
+  .menu {
+    display: flex;
+  }
+}
