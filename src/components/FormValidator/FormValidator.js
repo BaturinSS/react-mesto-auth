@@ -13,6 +13,7 @@ function FormValidator() {
 
   useEffect(() => {
     const popupActiv = document.querySelector('.popup_opened');
+
     if (popupActiv) {
       const formActivPopup = popupActiv.querySelector('.popup__form');
       if (!formActivPopup) {

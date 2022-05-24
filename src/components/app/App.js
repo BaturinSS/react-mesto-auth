@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import ImagePopup from '../ImagePopup/ImagePopup';
 import { useState, useEffect } from "react";
+import { Route, Switch } from 'react-router-dom';
 import { api } from '../utils/Api';
 import { TranslationContext } from '../../contexts/CurrentUserContext';
 import EditProfilePopup from '../EditProfilePopup/EditProfilePopup';
@@ -12,6 +13,7 @@ import AddPlacePopup from '../AddPlacePopup/AddPlacePopup';
 import ConfirmDeletePopup from '../ConfirmDeletePopup/ConfirmDeletePopup';
 import { auth } from '../utils/Auth';
 import InformMessagePopup from '../InformMessagePopup/InformMessagePopup';
+import Authorization from '../Authorization/Authorization';
 
 
 function App() {
@@ -212,15 +214,34 @@ function App() {
 
       <Header />
 
-      <Main
-        onEditProfile={handleEditProfileClick}
-        onEditAvatar={handleEditAvatarClick}
-        onAddPlace={handleAddPlaceClick}
-        onCardDelete={updateDeleteCard}
-        onCardClick={handleCardClick}
-        onCardLike={handleCardLike}
-        cards={cards}
-      />
+      <Switch>
+
+        <Route path="/">
+
+          <Authorization
+            title='Регистрация'
+            name='register'
+            buttonText='Зарегистрироваться'
+            isButtonDisabled={isButtonDisabled}
+          />
+
+        </Route>
+
+        {/* <Route path="/">
+
+          <Main
+            onEditProfile={handleEditProfileClick}
+            onEditAvatar={handleEditAvatarClick}
+            onAddPlace={handleAddPlaceClick}
+            onCardDelete={updateDeleteCard}
+            onCardClick={handleCardClick}
+            onCardLike={handleCardLike}
+            cards={cards}
+          />
+
+        </Route> */}
+
+      </Switch>
 
       <Footer />
 
@@ -257,9 +278,7 @@ function App() {
         setIsButtonDisabled={setIsButtonDisabled}
       />
 
-      <ImagePopup
-        card={selectedCard}
-      />
+      <ImagePopup card={selectedCard} />
 
       <InformMessagePopup />
 
