@@ -3,6 +3,7 @@
   padding-top: 45px;
   padding-bottom: 60px;
   text-rendering: optimizeLegibility;
+  transition: 0.8s;
   /*border: 1px solid red;*/
 }
 

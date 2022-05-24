@@ -1,5 +1,5 @@
-.popup__input-error {
-  min-height: 30px;
+.authorization__input-error {
+  min-height: 27px;
   padding: 3px 0 0;
   visibility: hidden;
   opacity: 0;
