@@ -32,4 +32,4 @@
   
 ---
 
-## :full_moon: [Ссылка на сайт](https://baturinss.github.io/mesto-react/)    :point_left::point_left::point_left:
+## :full_moon: [Ссылка на сайт](https://baturinss.github.io/react-mesto-auth/)    :point_left::point_left::point_left:
