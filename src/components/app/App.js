@@ -214,7 +214,7 @@ function App() {
 
       <Header />
 
-      <Route path="/">
+      <Route exact path="/">
 
         <Main
           onEditProfile={handleEditProfileClick}
