@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './Header.css';
 import logo from '../../logo.svg';
 import MenuMobile from "../MenuMobile/MenuMobile";
+import cross from '../../images/image-cross.svg';
 
 function Header({
 
@@ -25,12 +26,23 @@ function Header({
       <div className="header" >
         <img onClick={refreshPage} className="header__logo" src={logo} alt="логотип" />
         <p className="header__email">{email}<a className="header__link-entry" href="#" target="_blank">Войти</a></p>
-        <div className="header__menu" onClick={openedMenuMobile}>
+        <img
+          className="header__close-menu"
+          src={cross}
+          alt="символ закрыть"
+          onClick={openedMenuMobile}
+          style={isOpenMenuMobile ? { displey: "block" } : { display: "none" }}
+        />
+        <div
+          className="header__menu"
+          onClick={openedMenuMobile}
+          style={!isOpenMenuMobile ? { displey: "block" } : { display: "none" }}
+        >
           <div className="header__menu-img"></div>
           <div className="header__menu-img"></div>
           <div className="header__menu-img"></div>
         </div>
-      </div >
+      </div>
     </>
   )
 }
