@@ -228,7 +228,7 @@ function App() {
 
       </Route>
 
-      {/* <Route path="/sign-up">
+      <Route path="/sign-up">
 
         <Authorization
           title='Регистрация'
@@ -248,7 +248,7 @@ function App() {
           isButtonDisabled={isButtonDisabled}
         />
 
-      </Route> */}
+      </Route>
 
       <Footer />
 
