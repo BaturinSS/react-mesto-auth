@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import ImagePopup from '../ImagePopup/ImagePopup';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from 'react-router-dom';
 import { api } from '../utils/Api';
 import { TranslationContext } from '../../contexts/CurrentUserContext';
@@ -214,7 +214,7 @@ function App() {
 
       <Header />
 
-      <Route exact path="/">
+      <Route path="/">
 
         <Main
           onEditProfile={handleEditProfileClick}
@@ -289,7 +289,7 @@ function App() {
 
       <InformMessagePopup />
 
-    </TranslationContext.Provider>
+    </TranslationContext.Provider >
   );
 }
 
