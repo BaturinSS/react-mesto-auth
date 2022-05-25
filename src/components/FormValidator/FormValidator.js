@@ -15,7 +15,7 @@ function FormValidator() {
     const popupActiv = document.querySelector('.popup_opened');
 
     if (popupActiv) {
-      const formActivPopup = popupActiv.querySelector('.popup__form');
+      const formActivPopup = popupActiv.querySelector('#form');
       if (!formActivPopup) {
         return
       } else {

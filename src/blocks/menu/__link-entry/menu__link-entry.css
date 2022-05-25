@@ -1,7 +1,7 @@
 .menu__link-entry {
-  padding: 0;
-  margin: 18px 0 40px;
+  margin: 0 0 40px;
   text-decoration: none;
+  padding: 0;
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -12,7 +12,7 @@
   transition: 0.8s;
 }
 
-.header__link-entry:hover {
+.menu__link-entry:hover {
   opacity: 0.5;
   cursor: pointer;
 }

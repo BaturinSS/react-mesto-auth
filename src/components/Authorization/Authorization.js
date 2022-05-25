@@ -1,61 +1,56 @@
 import React, { useState } from "react";
+import { Link, Route, withRouter } from 'react-router-dom';
 import './Authorization.css';
-import FormValidator from "../FormValidator/FormValidator";
 
 function Authorization({
   title,
   name,
   buttonText,
-  isButtonDisabled
+  isButtonDisabled,
+  setIsButtonDisabled,
+  onSubmit,
+  isEmail,
+  setIsEmail
 }) {
-  const { setIsEventInput, setIsOpenForm, isValidForm, isValidInput, isErrorMessage } = FormValidator();
-
-  const { emailErrorMessage = '', passwordErrorMessage = '' } = isErrorMessage;
-
-  const { emailValidInput = true, passwordValidInput = true } = isValidInput;
-
-  const [isEmail, setIsEmail] = useState({});
-
   const [isPassword, setIsPassword] = useState({});
 
   function handleEmailChange(event) {
-    setIsEventInput(event);
     setIsEmail(event.target.value);
   }
 
   function handlePasswordChange(event) {
-    setIsEventInput(event);
     setIsPassword(event.target.value);
   }
 
-  // setIsOpenForm(false);
-
-  const isOpen = false;
-
+  function handleSubmit(event) {
+    event.preventDefault();
+    setIsButtonDisabled(true);
+    onSubmit(isPassword, isEmail)
+  }
   return (
-    <div className={`authorization authorization_type_${name} ${isOpen && "popup_opened"}`}>
+    <div className={`authorization authorization_type_${name}`}>
       <h1 className="authorization__title">{title}</h1>
       <form
-        className={`authorization__form authorization__form_type_${name} popup__form`}
+        className={`authorization__form authorization__form_type_${name}`}
         name={`${name}Form`}
         noValidate
+        onSubmit={handleSubmit}
       >
         <input
           id={`${name}Email-input`}
-          className={`authorization__input authorization__input_${name}-email ${!emailValidInput ? "popup__input_type_error" : ''}`}
+          className={`authorization__input authorization__input_${name}-email`}
           required
           placeholder="Email"
           spellCheck="true"
           type="email"
           name='email'
           onChange={handleEmailChange}
+          value={isEmail}
         />
-        <span className={`authorization__input-error ${name}Email-input-error ${!emailValidInput ? "popup__input_type_error" : ''}`}>
-          {emailErrorMessage}
-        </span>
+        <span className={`authorization__input-error ${name}Email-input-error`}></span>
         <input
           id={`${name}Password-input`}
-          className={`authorization__input authorization__input_${name}-password ${!passwordValidInput ? "popup__input_type_error" : ''}`}
+          className={`authorization__input authorization__input_${name}-password`}
           required
           placeholder="Пароль"
           spellCheck="true"
@@ -65,23 +60,22 @@ function Authorization({
           maxLength="12"
           onChange={handlePasswordChange}
         />
-        <span className={`authorization__input-error ${name}Password-input-error ${!passwordValidInput ? "popup__input_type_error" : ''}`}>
-          {passwordErrorMessage}
-        </span>
+        <span className={`authorization__input-error ${name}Password-input-error`}></span>
         <button
           className={`authorization__save-button`}
           type="submit"
-          disabled={isButtonDisabled || !isValidForm ? true : false}
+          disabled={isButtonDisabled ? true : false}
         >
           {buttonText}
         </button>
       </form>
-      <p className="authorization__comment">
-        Уже зарегистрированы?
-        <a className="authorization__link-entry" href="#" target="_blank"> Войти</a>
-      </p>
+      <Route exact path="/sign-up">
+        <p className="authorization__comment">Уже зарегистрированы?
+          <Link className="authorization__link-entry" to="/sign-in"> Войти</Link>
+        </p>
+      </Route>
     </div>
   )
 }
 
-export default Authorization;
+export default withRouter(Authorization);
