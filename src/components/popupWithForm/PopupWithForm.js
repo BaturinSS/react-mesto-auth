@@ -13,7 +13,7 @@ function PopupWithForm({
   isValidForm
 }) {
   return (
-    <div className={`popup popup_type_${name} ${isOpen && "popup_opened"}`}>
+    <div className={`popup popup_type_${name} ${isOpen && "popup_opened onValiddator"}`}>
       <div className="popup__container">
         <button className="popup__close" type="button">
           <img className="popup__image-cross" src={cross} alt="иконка" />

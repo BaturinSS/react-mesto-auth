@@ -12,10 +12,11 @@ function FormValidator() {
   const [isErrorMessage, setIsErrorMessage] = useState({})
 
   useEffect(() => {
-    const popupActiv = document.querySelector('.popup_opened');
+    const popupActiv = document.querySelector('.onValiddator');
 
     if (popupActiv) {
-      const formActivPopup = popupActiv.querySelector('#form');
+      const formActivPopup = popupActiv.querySelector('form');
+      console.log('formActivPopup', formActivPopup.checkValidity())
       if (!formActivPopup) {
         return
       } else {
@@ -43,7 +44,7 @@ function FormValidator() {
         [`${name}ErrorMessage`]: isEventInput.target.validationMessage
       });
 
-      setIsValidForm(isEventInput.target.closest('.popup__form').checkValidity());
+      setIsValidForm(isEventInput.target.closest('form').checkValidity());
     }
   }, [isEventInput])
 

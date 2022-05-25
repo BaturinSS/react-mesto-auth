@@ -34,6 +34,7 @@ function App() {
   const [isEmail, setIsEmail] = useState('')
   const history = useHistory();
   const [isRegister, setIsRegister] = useState(false);
+  const [isValidFormRegister, setIsValidFormRegister] = useState(true)
   const isOpen =
     isEditAvatarPopupOpen ||
     isEditProfilePopupOpen ||
@@ -105,21 +106,25 @@ function App() {
   const handleEditAvatarClick = () => {
     setIsButtonDisabled(false)
     setIsEditAvatarPopupOpen(true);
+    setIsValidFormRegister(false);
   };
 
   const handleEditProfileClick = () => {
     setIsButtonDisabled(false)
     setIsEditProfilePopupOpen(true);
+    setIsValidFormRegister(false);
   };
 
   const handleAddPlaceClick = () => {
     setIsButtonDisabled(false)
     setIsAddPlacePopupOpen(true);
+    setIsValidFormRegister(false);
   };
 
   const handleDeleteCardClick = () => {
     setIsButtonDisabled(false)
     setIsConfirmDeletePopupOpen(true);
+    setIsValidFormRegister(false);
   };
 
   const updateDeleteCard = (card) => {
@@ -142,6 +147,7 @@ function App() {
     setIsConfirmDeletePopupOpen(false);
     setSelectedCard(null);
     setIsOpenPopupMessage(false)
+    setIsValidFormRegister(true);
   }
 
   const handleUpdateUser = (name, about) => {
@@ -309,6 +315,7 @@ function App() {
           onSubmit={onSubmitRegister}
           isEmail={isEmail}
           setIsEmail={setIsEmail}
+          isValidFormRegister={isValidFormRegister}
         />
 
       </Route>
@@ -324,6 +331,7 @@ function App() {
           isEmail={isEmail}
           setIsEmail={setIsEmail}
           onSubmit={onSubmitLogin}
+          isValidFormRegister={isValidFormRegister}
         />
 
       </Route>

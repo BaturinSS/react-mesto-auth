@@ -64,7 +64,7 @@ function EditProfilePopup({
         spellCheck="true"
         type="text"
         name="name"
-        minLength="2"
+        minLength="4"
         maxLength="40"
         onChange={handleNameChange}
         value={name || ''}
@@ -78,7 +78,7 @@ function EditProfilePopup({
         spellCheck="true"
         type="text"
         name="job"
-        minLength="2"
+        minLength="4"
         maxLength="200"
         onChange={handleJobChange}
         value={description || ''}
