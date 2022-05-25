@@ -28,7 +28,7 @@ function Authorization({
     setIsPassword(event.target.value);
   }
 
-  setIsOpenForm(false);
+  // setIsOpenForm(false);
 
   const isOpen = false;
 
