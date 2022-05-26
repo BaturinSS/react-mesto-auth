@@ -24,7 +24,6 @@ function Authorization({
 
   function handleEmailChange(event) {
     setIsEmail(event.target.value.trim());
-    event.target.value = isEmail;
     setIsEventInput(event);
   }
 
