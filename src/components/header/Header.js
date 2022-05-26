@@ -20,15 +20,20 @@ function Header({
     setIsOpenMenuMobile(!isOpenMenuMobile);
   }
 
+  const onClickExit = () => {
+    handleExit();
+    setIsOpenMenuMobile(false);
+  }
+
   return (
     <>
-      {isOpenMenuMobile && isLoggedIn && <MenuMobile email={email} handleExit={handleExit} />}
+      {isOpenMenuMobile && isLoggedIn && <MenuMobile email={email} onClickExit={onClickExit} />}
       <div className="header" >
         <img onClick={refreshPage} className="header__logo" src={logo} alt="логотип" />
 
         <Route exact path="/">
           <p className='header__email'>{email}
-            <Link to="/sign-in" className="header__link-entry header__link-entry_type_color" onClick={handleExit}>Выйти</Link>
+            <Link to="/sign-in" className="header__link-entry header__link-entry_type_color" onClick={onClickExit}>Выйти</Link>
           </p>
           <img
             className="header__close-menu"
