@@ -1,8 +1,8 @@
 import './App.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import Main from '../Main/Main';
-import ImagePopup from '../ImagePopup/ImagePopup';
+import Header from '../_Header/_Header';
+import Footer from '../_Footer/_Footer';
+import Main from '../_Main/Main';
+import ImagePopup from '../_ImagePopup/_ImagePopup';
 import React, { useState, useEffect } from "react";
 import { Route, useHistory } from 'react-router-dom';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
