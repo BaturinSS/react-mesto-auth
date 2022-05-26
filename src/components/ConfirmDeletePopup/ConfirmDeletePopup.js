@@ -11,6 +11,7 @@ function ConfirmDeletePopup({
   isButtonDisabled
 }) {
   const { isValidForm } = FormValidator();
+
   function handleSubmit(event) {
     event.preventDefault();
     setIsButtonDisabled(true);
@@ -24,7 +25,7 @@ function ConfirmDeletePopup({
       isOpen={isOpen}
       onSubmit={handleSubmit}
       isButtonDisabled={isButtonDisabled}
-      isValidForm={isValidForm}
+      isValidForm={!isValidForm}
     >
     </PopupWithForm>
   )

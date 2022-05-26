@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
-import './Header.css';
+import './header.css';
 import logo from '../../logo.svg';
 import MenuMobile from "../MenuMobile/MenuMobile";
 import cross from '../../images/image-cross.svg';

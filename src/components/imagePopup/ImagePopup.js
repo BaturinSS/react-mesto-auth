@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './ImagePopup.css';
+import './imagePopup.css';
 import cross from '../../images/image-cross.svg';
 
 function ImagePopup({ card }) {

@@ -16,7 +16,7 @@ function FormValidator() {
 
     if (popupActiv) {
       const formActivPopup = popupActiv.querySelector('form');
-      console.log('formActivPopup', formActivPopup.checkValidity())
+
       if (!formActivPopup) {
         return
       } else {

@@ -1,8 +1,8 @@
 import './App.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import Main from '../Main/Main';
-import ImagePopup from '../ImagePopup/ImagePopup';
+import Header from '../header/header';
+import Footer from '../footer/footer';
+import Main from '../main/main';
+import ImagePopup from '../imagePopup/imagePopup';
 import React, { useState, useEffect } from "react";
 import { Route, useHistory } from 'react-router-dom';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -53,6 +53,11 @@ function App() {
           setIsLoggedIn(true);
           history.push('/');
         })
+        .catch((err) => {
+          err.then(({ message }) => {
+            console.log(`Ошибка токена "${message}"`)
+          })
+        })
     }
   }
 
@@ -76,7 +81,22 @@ function App() {
           })
         })
     }
-  }, [isUpdateCards, isLoggedIn]);
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      api
+        .getCards()
+        .then((cards) => {
+          setCards(cards);
+        })
+        .catch((err) => {
+          err.then(({ message }) => {
+            alert(message)
+          })
+        })
+    }
+  }, [isUpdateCards])
 
   useEffect(() => {
     function closeByEscape(event) {
