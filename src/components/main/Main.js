@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import './main.css';
+import './Main.css';
 import Card from "../Card/Card";
 import { TranslationContext } from '../../contexts/CurrentUserContext';
 
