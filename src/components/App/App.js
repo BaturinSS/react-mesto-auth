@@ -291,6 +291,7 @@ function App() {
           setIsButtonDisabled(false)
           setIsOpenPopupMessage(true);
           setIsLoggedIn(false)
+          setIsRegister(false)
           console.log(`Ошибка входа ${message}`)
         })
       })

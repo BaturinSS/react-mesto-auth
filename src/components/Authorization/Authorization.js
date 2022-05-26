@@ -23,7 +23,8 @@ function Authorization({
   const [isPassword, setIsPassword] = useState({});
 
   function handleEmailChange(event) {
-    setIsEmail(event.target.value);
+    setIsEmail(event.target.value.trim());
+    event.target.value = isEmail;
     setIsEventInput(event);
   }
 
@@ -73,7 +74,7 @@ function Authorization({
         />
         <span className={`authorization__input-error ${name}Password-input-error ${!passwordValidInput ? "authorization__input-error_active" : ''}`}>{passwordErrorMessage}</span>
         <button
-          className={`authorization__save-button ${isButtonDisabled || !isValidForm ? "authorization__save-button_disabled" : ''}`}
+          className={`authorization__save-button ${isButtonDisabled || isValidForm ? "authorization__save-button_active" : ''}`}
           type="submit"
           disabled={isButtonDisabled || !isValidForm ? true : false}
         >

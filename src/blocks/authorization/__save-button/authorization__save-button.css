@@ -16,11 +16,6 @@
   transition: 0.8s;
 }
 
-.authorization__save-button:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 420px) {
   .authorization__save-button {
     height: 46px;
