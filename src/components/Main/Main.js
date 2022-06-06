@@ -15,7 +15,7 @@ function Main({
   const currentUser = useContext(TranslationContext);
 
   return (
-    <div className="content">
+    <main className="content">
       <section className="profile">
         <div className="profile__figure">
           <div className="profile__ellipse" onClick={onEditAvatar}>
@@ -45,7 +45,7 @@ function Main({
           })}
         </ul>
       </section>
-    </div>
+    </main>
   )
 }
 
