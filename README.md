@@ -31,5 +31,10 @@
   :white_check_mark: Обновлять аватар    
   
 ---
-
-## :full_moon: [Ссылка на сайт](https://baturinss.github.io/react-mesto-auth/)    :point_left::point_left::point_left:
+[Ссылка на сервер](https://novoapi.nomoredomains.xyz/)  
+[Ссылка на репозиторий сервера](https://github.com/BaturinSS/express-mesto-gha/)  
+---
+[Ссылка на фронтенд](https://novo.nomoredomains.xyz/)  
+[Ссылка на репозиторий фронтенда](https://github.com/BaturinSS/react-mesto-auth/)  
+---
+[Ссылка на сервер на GitHab pages](https://baturinss.github.io/react-mesto-auth/)  
